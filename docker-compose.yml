@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "8100:5432"
+
+  fastapi:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/project
+    depends_on:
+      - db
+
+volumes:
+  db_data:
