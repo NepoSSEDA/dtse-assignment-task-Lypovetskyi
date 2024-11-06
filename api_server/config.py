@@ -1,0 +1,5 @@
+DATABASE_HOST = 'db'
+DATABASE_PORT = 5432
+DATABASE_NAME = 'dtse-assignment-task-db'
+DATABASE_USER = 'postgres'
+DATABASE_PASSWORD = '12345'
